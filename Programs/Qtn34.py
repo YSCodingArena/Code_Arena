@@ -14,7 +14,5 @@ run.age = 26
 run.displayAttributes()
 <<<<<<< HEAD
 run.salary = 75000
-=======
-run.sez = 'Male'
->>>>>>> d52c2a5bacb7c64598a55ba9210d410ddcdefb32
+run.sex = 'Male'
 run.displayAttributes()
