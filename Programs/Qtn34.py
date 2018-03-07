@@ -12,3 +12,5 @@ run.displayAttributes()
 run.name = 'Hemanth Kumar Y S'
 run.age = 26
 run.displayAttributes()
+run.salary = 75000
+run.displayAttributes()
