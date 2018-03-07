@@ -9,3 +9,6 @@ class operatorNum:
 		
 run = operatorNum()
 run.displayAttributes()
+run.name = 'Hemanth Kumar Y S'
+run.age = 26
+run.displayAttributes()
