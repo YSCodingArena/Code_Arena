@@ -1,0 +1,90 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\WINDOWS\System32>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print("-- This parrot wouldn't", action, end=' ')
+...     print("if you put", voltage, "volts through it.")
+...     print("-- Lovely plumage, the", type)
+...     print("-- It's", state, "!")
+...
+>>> parrot(1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot(1)
+-- This parrot wouldn't voom if you put 1 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot(1, 20)
+-- This parrot wouldn't voom if you put 1 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's 20 !
+>>> parrot(voltage = 1, 20)
+  File "<stdin>", line 1
+SyntaxError: positional argument follows keyword argument
+>>> parrot(1, state = 20)
+-- This parrot wouldn't voom if you put 1 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's 20 !
+>>> def function(a):
+...     pass
+...
+>>> function(0, a=1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: function() got multiple values for argument 'a'
+>>> def cheeseshop(kind, *arguments, **keywords):
+...     print("-- Do you have any", kind, "?")
+...     print("-- I'm sorry, we're all out of", kind)
+...     for arg in arguments:
+...         print(arg)
+...     print("-" * 40)
+...     for kw in keywords:
+...         print(kw, ":", keywords[kw])
+...
+>>> cheeseshop("Limburger", "It's very runny, sir.",
+... "It's really very, VERY runny, sir.",
+... shopkeeper="Michael Palin",
+... client="John Cleese",
+... sketch="Cheese Shop Sketch")
+-- Do you have any Limburger ?
+-- I'm sorry, we're all out of Limburger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+shopkeeper : Michael Palin
+client : John Cleese
+sketch : Cheese Shop Sketch
+>>> cheeseshop(shopkeeper="Michael Palin",
+... client="John Cleese",
+... sketch="Cheese Shop Sketch",
+... "Limburger", "It's very runny, sir.",
+... "It's really very, VERY runny, sir.")
+  File "<stdin>", line 4
+SyntaxError: positional argument follows keyword argument
+>>> cheeseshop("Limburger",
+... shopkeeper="Michael Palin",
+... client="John Cleese",
+... sketch="Cheese Shop Sketch",
+... "It's very runny, sir.",
+... "It's really very, VERY runny, sir.").
+  File "<stdin>", line 6
+    "It's really very, VERY runny, sir.").
+                                         ^
+SyntaxError: invalid syntax
+>>> cheeseshop("Limburger",
+... shopkeeper="Michael Palin",
+... client="John Cleese",
+... sketch="Cheese Shop Sketch",
+... "It's very runny, sir.",
+... "It's really very, VERY runny, sir.")
+  File "<stdin>", line 5
+SyntaxError: positional argument follows keyword argument
+>>> cheeseshop("Limburger")
+-- Do you have any Limburger ?
+-- I'm sorry, we're all out of Limburger
+----------------------------------------
+>>>

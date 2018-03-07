@@ -1,0 +1,289 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\hemanth>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> ^Z
+
+
+C:\Users\hemanth>cd E:\Hemanth\Personal\Python Examples\OOPs\Programs\Functions
+
+C:\Users\hemanth>e:
+
+E:\Hemanth\Personal\Python Examples\OOPs\Programs\Functions>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import fib2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'fib2'
+>>> import fib2()
+  File "<stdin>", line 1
+    import fib2()
+               ^
+SyntaxError: invalid syntax
+>>> def fib2(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         result.append(a)
+...         a,b = b, a+b
+...     return result
+...
+>>> f100 = fib2(100)
+>>> f100
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+>>> fib2(2000)
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, end = ' ')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, end = '-')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib(2000)
+0-1-1-2-3-5-8-13-21-34-55-89-144-233-377-610-987-1597-
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, start = '*', end = '-')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib(2000)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 5, in fib
+TypeError: 'start' is an invalid keyword argument for this function
+>>> dir(print)
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__modul
+e__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+>>> dir(print())
+
+['__bool__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__'
+, '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+>>> dir(print.__dir__)
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__modul
+e__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+>>> dir(print().__dir__)
+
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__modul
+e__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+>>> dir(print().__dir__)
+
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__modul
+e__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, sep = '*', end = '-')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib(2000)
+0-1-1-2-3-5-8-13-21-34-55-89-144-233-377-610-987-1597-
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, sep = '*')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib(2000)
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+
+>>>
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\WINDOWS\System32>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def fib(n):
+...     result = []
+...     a,b = 0,1
+...     while a < n:
+...         print (a, end = ' ')
+...         a,b = b, a+b
+...     print ()
+...
+>>> fib
+<function fib at 0x0019C618>
+>>> f, f1, f2 = fib
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'function' object is not iterable
+>>> f = fib
+>>> f(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+>>> fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+>>> fib(0)
+
+>>> print(fib(0))
+
+None
+>>> def ask_ok(prompt, retries=4, reminder='Please try again!'):
+...     while True:
+...         ok = input(prompt)
+...         if ok in ('y', 'ye', 'yes'):
+...             return True
+...         if ok in ('n', 'no', 'nop', 'nope'):
+...             return False
+...         retries = retries - 1
+...         if retries < 0:
+...             raise ValueError('invalid user response')
+...         print(reminder)
+...
+>>> ask_ok('Do you really want to quit?')
+Do you really want to quit?yes
+True
+>>> ask_ok('OK to overwrite the file?', 2)
+OK to overwrite the file?yes
+True
+>>> ask_ok('OK to overwrite the file?', 1)
+OK to overwrite the file?y
+True
+>>> ask_ok('OK to overwrite the file?', 0)
+OK to overwrite the file?y
+True
+>>> ask_ok('OK to overwrite the file?', 2)
+OK to overwrite the file?q
+Please try again!
+OK to overwrite the file?e
+Please try again!
+OK to overwrite the file?e
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in ask_ok
+ValueError: invalid user response
+>>> ask_ok('OK to overwrite the file?', 2, 'Come on,
+  File "<stdin>", line 1
+    ask_ok('OK to overwrite the file?', 2, 'Come on,
+                                                   ^
+SyntaxError: EOL while scanning string literal
+>>> only yes or no!')
+  File "<stdin>", line 1
+    only yes or no!')
+           ^
+SyntaxError: invalid syntax
+>>> ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
+OK to overwrite the file?q
+Come on, only yes or no!
+OK to overwrite the file?yes
+True
+>>> i = 5
+>>> def f(arg=i):
+... print(arg)
+  File "<stdin>", line 2
+    print(arg)
+        ^
+IndentationError: expected an indented block
+>>> i = 6
+>>> f()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: fib() missing 1 required positional argument: 'n'
+>>> def f(arg=i):
+... print(arg)
+  File "<stdin>", line 2
+    print(arg)
+        ^
+IndentationError: expected an indented block
+>>> def f(arg=i):
+...     print(arg)
+...
+>>> f()
+6
+>>> i=7
+>>> f()
+6
+>>>
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\WINDOWS\System32>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def f(a, L=[]):
+...     L.append(a)
+...     return L
+...
+>>> print (f(2))
+[2]
+>>> print (f(1))
+[2, 1]
+>>> def f(a, L=None):
+...     if L is None:
+...     L = []
+  File "<stdin>", line 3
+    L = []
+    ^
+IndentationError: expected an indented block
+>>>     L.append(a)
+  File "<stdin>", line 1
+    L.append(a)
+    ^
+IndentationError: unexpected indent
+>>>     return L
+  File "<stdin>", line 1
+    return L
+    ^
+IndentationError: unexpected indent
+>>> def f(a, L=None):
+...     if L is None:
+...         L = []
+...     L.append(a)
+...     return L
+...
+>>> print (f(2))
+[2]
+>>> print (f(5))
+[5]
+>>>

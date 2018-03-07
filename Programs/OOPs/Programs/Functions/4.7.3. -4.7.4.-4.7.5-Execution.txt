@@ -1,0 +1,197 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\WINDOWS\System32>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 17:54:52) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def concat(*args, sep="/"):
+...     return sep.join(args)
+...
+>>> concat("earth", "mars", "venus")
+'earth/mars/venus'
+>>> concat(as="asd","earth", "mars", "venus")
+  File "<stdin>", line 1
+    concat(as="asd","earth", "mars", "venus")
+            ^
+SyntaxError: invalid syntax
+>>> concat(sep="asd","earth", "mars", "venus")
+  File "<stdin>", line 1
+SyntaxError: positional argument follows keyword argument
+>>> concat("earth", "mars", "venus", sep=".")
+'earth.mars.venus'
+>>> concat("earth", "mars", "venus", sep=" ")
+'earth mars venus'
+>>> concat("earth", "mars", "venus", sep=", ")
+'earth, mars, venus'
+>>> a=[1,2,3,4]
+>>> print (a)
+[1, 2, 3, 4]
+>>> print (*a)
+1 2 3 4
+>>> print (*a, end=".")
+1 2 3 4.>>>
+>>> type(*a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: type() takes 1 or 3 arguments
+>>> type(a)
+<class 'list'>
+>>> type(*a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: type() takes 1 or 3 arguments
+>>> help(type)
+Help on class type in module builtins:
+
+class type(object)
+ |  type(object_or_name, bases, dict)
+ |  type(object) -> the object's type
+ |  type(name, bases, dict) -> a new type
+ |
+ |  Methods defined here:
+ |
+ |  __call__(self, /, *args, **kwargs)
+ |      Call self as a function.
+ |
+ |  __delattr__(self, name, /)
+ |      Implement delattr(self, name).
+ |
+ |  __dir__(...)
+ |      __dir__() -> list
+ |      specialized __dir__ implementation for types
+ |
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __instancecheck__(...)
+ |      __instancecheck__() -> bool
+ |      check if an object is an instance
+ |
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |
+ |  __prepare__(...)
+ |      __prepare__() -> dict
+ |      used to create the namespace for the class statement
+ |
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |
+ |  __setattr__(self, name, value, /)
+ |      Implement setattr(self, name, value).
+ |
+ |  __sizeof__(...)
+ |      __sizeof__() -> int
+ |      return memory consumption of the type object
+ |
+ |  __subclasscheck__(...)
+ |      __subclasscheck__() -> bool
+ |      check if a class is a subclass
+ |
+ |  __subclasses__(...)
+ |      __subclasses__() -> list of immediate subclasses
+ |
+ |  mro(...)
+ |      mro() -> list
+ |      return a type's method resolution order
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  __abstractmethods__
+ |
+ |  __dict__
+ |
+ |  __text_signature__
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |
+ |  __base__ = <class 'object'>
+ |      The most base type
+ |
+ |  __bases__ = (<class 'object'>,)
+ |
+ |  __basicsize__ = 432
+ |
+ |  __dictoffset__ = 132
+ |
+ |  __flags__ = -2146675712
+ |
+ |  __itemsize__ = 20
+ |
+ |  __mro__ = (<class 'type'>, <class 'object'>)
+ |
+ |  __weakrefoffset__ = 184
+
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>> list(range(3, 6))
+[3, 4, 5]
+>>> list(range(*a))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: range expected at most 3 arguments, got 4
+>>> args = [3,9]
+>>> list(range(*args))
+[3, 4, 5, 6, 7, 8]
+>>> def parrot(voltage, state='a stiff', action='voom'):
+...     print("-- This parrot wouldn't", action, end=' ')
+...     print("if you put", voltage, "volts through it.", end=' ')
+...     print("E's", state, "!")
+...
+>>> d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+>>> parrot(d)
+-- This parrot wouldn't voom if you put {'voltage': 'four million', 'state': "bleedin' demised", 'action': 'VOOM'} volts through it. E's a stiff !
+>>> parrot(*d)
+-- This parrot wouldn't action if you put voltage volts through it. E's state !
+>>> parrot(1)
+-- This parrot wouldn't voom if you put 1 volts through it. E's a stiff !
+>>> parrot(**d)
+-- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
+>>> d = {"Voltage": "four million", "State": "bleedin' demised", "Action": "VOOM"}
+>>> parrot(*d)
+-- This parrot wouldn't Action if you put Voltage volts through it. E's State !
+>>> //Only considering the keys as arguments.
+  File "<stdin>", line 1
+    //Only considering the keys as arguments.
+     ^
+SyntaxError: invalid syntax
+>>> def make_incrementor(n):
+...     return lambda x: x + n
+...
+>>> f = make_incrementor(32)
+>>> f(0)
+32
+>>> f(2)
+34
+>>> f(1)
+33
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs.sort(key=lambda pair: pair[1])
+>>> pairs
+[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs
+[(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>>
