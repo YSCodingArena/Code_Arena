@@ -13,17 +13,6 @@ class Queue:
 		
 mob1 = Queue('Redmi 5A', 10000)
 mob1.totalMobiles()
-<<<<<<< HEAD
-#print (mob1.__dir__())
-print (__builtins__.__dir__())
-
-<<<<<<< HEAD
-	def __init__(self):
-		self.me = self
-=======
-#print (mob1.__class__.__dict__)
->>>>>>> update-stuff
-=======
 mob2 = Queue('Samsung Galaxy', 12000)
 mob3 = Queue('Apple X', 100000)
 Queue.totalMobiles(mob1)
@@ -31,4 +20,3 @@ mob1.price = 9999
 mob1.totalMobiles()
 mob1.process()
 mob1.totalMobiles()
->>>>>>> update-stuff
