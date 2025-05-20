@@ -1,6 +1,7 @@
 import requests
 import paramiko
 
+
 class Queue:
     mobList = []
 
@@ -15,7 +16,7 @@ class Queue:
     def process(self):
         Queue.mobList.remove(self.__dict__)
 
-
+ 
 mob1 = Queue("Redmi 5A", 10000)
 mob1.totalMobiles()
 mob2 = Queue("Samsung Galaxy", 12000)
